@@ -1,0 +1,35 @@
+.description__block {
+  margin-bottom: 18px;
+}
+
+.title {
+  font-size: 28px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.title::after,
+.title::before {
+  content: "";
+  height: 1px;
+  width: 70px;
+  background-color: black;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.title::before {
+  left: 0;
+}
+
+.title::after {
+  right: 0;
+}
+
+.desc {
+  font-size: 18px;
+  font-weight: 500;
+}

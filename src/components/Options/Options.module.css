@@ -1,0 +1,46 @@
+.btn__block {
+  display: flex;
+  gap: 8px;
+
+  margin-bottom: 18px;
+}
+
+.btn {
+  position: relative;
+  padding: 8px 16px;
+  border: 1px solid rgba(2, 126, 251, 1);
+  border-radius: 2px;
+  color: #fff;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04rem;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 172, 238, 1) 0%,
+    rgba(2, 126, 251, 1) 100%
+  );
+  transition: 500ms ease-in-out;
+}
+
+.btn:hover {
+  color: rgba(2, 126, 251, 1);
+  background: transparent;
+  border: 1px solid rgba(2, 126, 251, 1);
+}
+
+.btn.accent {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 0, 0, 1),
+    rgba(251, 72, 2, 1)
+  );
+
+  border: 1px solid rgba(255, 0, 0, 1);
+}
+
+.accent:hover {
+  color: rgba(255, 0, 0, 1);
+  background: transparent;
+}
