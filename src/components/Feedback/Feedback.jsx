@@ -8,8 +8,8 @@ export const Feedback = ({
 }) => {
   const itemsArray = Object.entries(items);
   return (
-    <div className={css.card}>
-      <ul className={css.card__content}>
+    <div>
+      <ul>
         {totalCount > 0 &&
           itemsArray.map(([key, value]) => (
             <li key={key}>

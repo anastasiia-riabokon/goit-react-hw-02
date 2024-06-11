@@ -21,7 +21,7 @@
     rgba(0, 172, 238, 1) 0%,
     rgba(2, 126, 251, 1) 100%
   );
-  transition: 500ms ease-in-out;
+  transition: 250ms ease-in;
 }
 
 .btn:hover {

@@ -20,11 +20,3 @@
 .accent_splendid {
   color: rgb(40, 208, 40);
 }
-
-.card {
-  transition: 250ms ease-in-out;
-}
-
-.card__content {
-  overflow: hidden;
-}
