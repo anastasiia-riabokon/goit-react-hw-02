@@ -8,7 +8,6 @@ export const Options = ({
   clear,
 }) => {
   const btnArray = Object.keys(items);
-  console.log(btnArray);
   return (
     <div className={css.btn__block}>
       {btnArray.map((btn) => (

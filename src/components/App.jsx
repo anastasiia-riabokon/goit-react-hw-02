@@ -5,23 +5,14 @@ import Description from "./Description/Description";
 import Notification from "./Notification/Notification";
 import Container from "./Container/Container";
 import Section from "./Section/Section";
+import {useLocalStorage} from "../hooks/useLocalStorage";
 
 function App() {
-  const [count, setCount] = useState(
-    () =>
-      JSON.parse(window.localStorage.getItem("count")) || {
-        good: 0,
-        neutral: 0,
-        bad: 0,
-      }
-  );
-
-  useEffect(() => {
-    window.localStorage.setItem(
-      "count",
-      JSON.stringify(count)
-    );
-  }, [count]);
+  const [count, setCount] = useLocalStorage("count", {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  });
 
   const updateFeedback = (feedbackType) => {
     setCount({
