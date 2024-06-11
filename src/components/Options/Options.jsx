@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import css from "./Options.module.css";
+import {motion, AnimatePresence} from "framer-motion";
 
 export const Options = ({
   items,
@@ -21,12 +22,18 @@ export const Options = ({
       ))}
 
       {totalCount > 0 && (
-        <button
-          className={clsx(css.btn, css.accent)}
-          onClick={clear}
-        >
-          Reset
-        </button>
+        <AnimatePresence>
+          <motion.button
+            className={clsx(css.btn, css.accent)}
+            onClick={clear}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{duration: 0.5}}
+          >
+            Reset
+          </motion.button>
+        </AnimatePresence>
       )}
     </div>
   );
