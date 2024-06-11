@@ -1,27 +1,26 @@
 import clsx from "clsx";
 import css from "./Options.module.css";
 
-export const Options = ({onClick, totalCount, clear}) => {
+export const Options = ({
+  items,
+  onClick,
+  totalCount,
+  clear,
+}) => {
+  const btnArray = Object.keys(items);
+  console.log(btnArray);
   return (
     <div className={css.btn__block}>
-      <button
-        className={css.btn}
-        onClick={() => onClick("good")}
-      >
-        Good
-      </button>
-      <button
-        className={css.btn}
-        onClick={() => onClick("neutral")}
-      >
-        Neutral
-      </button>
-      <button
-        className={css.btn}
-        onClick={() => onClick("bad")}
-      >
-        Bad
-      </button>
+      {btnArray.map((btn) => (
+        <button
+          key={btn}
+          className={css.btn}
+          onClick={() => onClick(btn)}
+        >
+          {btn[0].toUpperCase() + btn.slice(1)}
+        </button>
+      ))}
+
       {totalCount > 0 && (
         <button
           className={clsx(css.btn, css.accent)}

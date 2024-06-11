@@ -50,6 +50,7 @@ function App() {
       <Container>
         <Description />
         <Options
+          items={count}
           onClick={updateFeedback}
           totalCount={totalFeedback}
           clear={deleteFeedback}
