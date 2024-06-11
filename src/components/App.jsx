@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Feedback from "./Feedback/Feedback";
 import Options from "./Options/Options";
 import Description from "./Description/Description";
@@ -7,11 +7,21 @@ import Container from "./Container/Container";
 import Section from "./Section/Section";
 
 function App() {
-  const [count, setCount] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  });
+  const [count, setCount] = useState(
+    () =>
+      JSON.parse(window.localStorage.getItem("count")) || {
+        good: 0,
+        neutral: 0,
+        bad: 0,
+      }
+  );
+
+  useEffect(() => {
+    window.localStorage.setItem(
+      "count",
+      JSON.stringify(count)
+    );
+  }, [count]);
 
   const updateFeedback = (feedbackType) => {
     setCount({
