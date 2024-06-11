@@ -1,8 +1,8 @@
 import css from "./Notification.module.css";
 import {motion, AnimatePresence} from "framer-motion";
 
-export const Notification = ({totalCount}) => {
-  return totalCount === 0 ? (
+export const Notification = () => {
+  return (
     <AnimatePresence>
       <motion.div
         initial={{opacity: 0}}
@@ -13,6 +13,6 @@ export const Notification = ({totalCount}) => {
         <p className={css.message}>No feedback yet</p>
       </motion.div>
     </AnimatePresence>
-  ) : null;
+  );
 };
 export default Notification;

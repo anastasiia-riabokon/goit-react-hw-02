@@ -46,12 +46,15 @@ function App() {
           totalCount={totalFeedback}
           clear={deleteFeedback}
         />
-        <Feedback
-          items={count}
-          totalCount={totalFeedback}
-          percentage={positiveFeedback}
-        />
-        <Notification totalCount={totalFeedback} />
+        {totalFeedback > 0 ? (
+          <Feedback
+            items={count}
+            totalCount={totalFeedback}
+            percentage={positiveFeedback}
+          />
+        ) : (
+          <Notification totalCount={totalFeedback} />
+        )}
       </Container>
     </Section>
   );

@@ -2,11 +2,7 @@ import clsx from "clsx";
 import css from "./Feedback.module.css";
 import {motion, AnimatePresence} from "framer-motion";
 
-export const Feedback = ({
-  items,
-  totalCount,
-  percentage,
-}) => {
+export const Feedback = ({items, percentage}) => {
   const itemsArray = Object.entries(items);
   return (
     <AnimatePresence>
@@ -17,21 +13,20 @@ export const Feedback = ({
         transition={{duration: 0.5}}
       >
         <ul>
-          {totalCount > 0 &&
-            itemsArray.map(([key, value]) => (
-              <motion.li
-                key={key}
-                initial={{opacity: 0, y: -20}}
-                animate={{opacity: 1, y: 0}}
-                exit={{opacity: 0, y: -20}}
-                transition={{duration: 0.5}}
-              >
-                <p>
-                  {key[0].toUpperCase() + key.slice(1)}:{" "}
-                  {value}
-                </p>
-              </motion.li>
-            ))}
+          {itemsArray.map(([key, value]) => (
+            <motion.li
+              key={key}
+              initial={{opacity: 0, y: -20}}
+              animate={{opacity: 1, y: 0}}
+              exit={{opacity: 0, y: -20}}
+              transition={{duration: 0.5}}
+            >
+              <p>
+                {key[0].toUpperCase() + key.slice(1)}:{" "}
+                {value}
+              </p>
+            </motion.li>
+          ))}
         </ul>
         {!isNaN(percentage) && (
           <motion.p
